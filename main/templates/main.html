@@ -1,0 +1,49 @@
+{% extends 'base.html' %} 
+
+{% block contents %}
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">멋쟁이사자처럼 8기</h1>
+      <p>이 페이지는 서울과학기술대학교X서울시립대학교X광운대학교 멋쟁이사자처럼 8기전용 사이트입니다.</p>
+      <p><a class="btn btn-primary btn-lg" href="https://likelion.net/" role="button">멋사에 대해 더 알아보기 &raquo;</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>CakeWalk</h2>
+        <p>당신이 원하는 케이크를 직접 시뮬레이션을 통해 커스텀마이징 해보고 주문해보세요! <ensp></ensp>특별한 연인에게 달달한 선물을 주세요.</p>
+        
+        <p><a class="btn btn-secondary" href="{% url 'notyet' %}" role="button">페이지이동 &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>HowRU</h2>
+        <p>HowRU is service platform for international students. Enjoy oneday-class and have travel from local people.</p>
+        <p><a class="btn btn-secondary" href="{% url 'notyet' %}" role="button" >페이지이동 &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>개발중</h2>
+        <p>아직 개발중이에요 ㅠㅠ</p><br><br>
+        <p><a class="btn btn-secondary" href="{% url 'notyet' %}" role="button">페이지이동 &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+ 
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>&copy; 멋쟁이사자처럼 8기 개발자 송민선</p>
+  
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>
+  function notedevelop(){
+    alert("아직 진행중인 프로젝트입니다.");
+  }
+</script>      
+{% endblock %}

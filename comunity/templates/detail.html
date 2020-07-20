@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<main role="main">
+    <br><br><br>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <form action="{% url 'delete' %}">
+    <h1>제목 : {{post.title}}</h1>
+    
+    <h2>작성자 : {{post.writer}}</h2>
+    
+    <div class="main" style="border : 2px; border-style: solid;">
+        <div class="body">
+        <h1>내용 : </h1>
+        <p>{{post.body}}</p>
+        <input type="hidden" name="blogNm" value="{{post.id}}">
+    </div>
+    </div>    
+    <input type="submit" value="삭제하기">
+    </form>
+  </main>
+  
+  
+
+  {% endblock %}

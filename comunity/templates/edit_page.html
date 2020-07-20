@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<form action="{% url 'edit' post.id %}">
+    <br><br><br>
+            <h1>글수정하기</h1>
+            <h1>제목</h1>
+            <input type="text" name="title">
+            <h1>작성자</h1>
+            <input type="text" name="writer">
+            <h1>내용</h1>
+            <textarea cols="150" rows="20" name="body"></textarea>
+            <h1>첨부이미지</h1>
+            <input type="file" name="img"><br><br><br>
+    <input type="hidden" name="blogNm" value="{{post.id}}">
+    <input type="submit" value="수정하기">
+    
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+  <div class="write_post">
+    <div id="posting" style="margin-left: 15px;">
+        <form action="{% url 'create' %}">
+            
+            <br><br><br>
+            <h1>제목</h1>
+            <input type="text" name="title">
+            <h1>작성자</h1>
+            <input type="text" name="writer">
+            <h1>내용</h1>
+            <textarea cols="150" rows="20" name="body"></textarea>
+            <h1>첨부이미지</h1>
+            <input type="file" name="img"><br><br><br>
+            <input type="submit" class="btn btn-dark" value="글쓰기">
+            
+        </form>
+
+    </div>
+  </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     
+<script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script></body>
+</html>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      
+      
+    {{txt}}
+      
+      <h1 class="display-3">멋사 커뮤니티</h1>
+      <p>여러분들의 의견을 공유해주세요.</p>
+
+      <p><a class="btn btn-primary btn-lg" href="{% url 'post' %}" role="button">글쓰기 &raquo;</a></p>
+     
+     
+    </div>
+  </div>
+
+  <div class="main_content">
+    
+    {% for post in post.all%}
+    <div style="border:2px; border-style: solid; display: flex; background-color:grey;">
+        <div class="main_con" >
+        <div style="text-align: left;">
+        <a href="{% url 'detail' post.id %}">{{post.title}}</a>
+        </div>
+        <div style="text-align: right;">
+        <h3>{{post.date}} {{post.writer}} <a href="{% url 'edit_page' post.id %}">수정하기</a></h3>
+    </div>
+    </div>
+          
+        </div> <!-- /container -->
+        {% endfor %}      
+
+    </div>
+
+    <div style="text-align: center;">
+        <p>머 일정갯수 넘어가면 넘어가는거 구현은 아직안배웠으니 나중에...</p>
+    </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>     
+<script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script></body>
+</html>
+{% endblock %}

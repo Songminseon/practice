@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block contents %}
+<br><br><br>
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <ul style="list-style: none;">
+        <li>ID : <input type="text" name="id"></li>
+        <li>PASSWORD : <input type="password" name="password1"></li>
+        <li>PASSWORD CONFIRM : <input type="password" name="password2"></li>
+        <li>EMAIL : <input type="text" name="email"></li>
+        <li>NICKNAME : <input type="text" name="nickname"></li>
+        <li><input type="submit" value="회원가입"></li>
+    </ul>
+</form>
+<div class="message" style="background-color: thistle; width: 100px; height: 100px;">
+{% if messages %}
+{% for message in messages%}
+{{message.message}}
+{% endfor %}
+{% endif %}
+</div>
+
+{% endblock %}
